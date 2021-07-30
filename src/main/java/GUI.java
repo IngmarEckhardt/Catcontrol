@@ -9,7 +9,7 @@ public class GUI {
     public static void Menue() {
         try {
             String eingabe = JOptionPane.showInputDialog("Möchtest du eine (n)eue Katze hinzufügen," +
-                    "dich über deine Katzen (i)nformieren, das Impf(d)atum aktualisieren," +
+                    " dich über deine Katzen (i)nformieren, das Impf(d)atum aktualisieren," +
                     "ein Spiel (s)pielen oder das Programm b(e)enden?");
             if (eingabe.equals("i")) {GUI.Katzeninfos();}
             else if (eingabe.equals("n")) {GUI.NewCat();}
@@ -33,6 +33,9 @@ public class GUI {
             }
         }
     }
+
+    /** NewCat ist eine Methode welche simple GUI-Elemente nutzt um dem Datensatz ein neues Katzenobjekt
+     * hinzuzufügen, und es gleichzeitig in der txt-Datei zu speichern. */
     public static void NewCat() {
         String katzenname = null;
         int alter = 0;
@@ -43,7 +46,7 @@ public class GUI {
 
 
         JOptionPane.showMessageDialog(null, "Geben Sie jetzt die ihnen bekannten Eigenschaften" +
-                "ihrer neuen Katze ein. Wenn Sie Eigenschaften nicht kennen, überspringen Sie das Feld ohne Eingabe.");
+                " ihrer neuen Katze ein. Wenn Sie Eigenschaften nicht kennen, überspringen Sie das Feld ohne Eingabe.");
         try {
             File datei = new File("target/classes/Cats.txt");
             boolean neu = false;
@@ -68,8 +71,8 @@ public class GUI {
             eingabe = JOptionPane.showInputDialog("Das Gewicht der Katze ist (kg mit zwei Kommastellen) ");
             gewicht = Double.parseDouble(eingabe);
             bw.write("\n" + eingabe);
-            eingabe = null;
-            while (eingabe.equals("j")  | eingabe.equals("n")) {
+            eingabe = "0";
+            while (!eingabe.equals("j")  & !eingabe.equals("n")) {
                 eingabe = JOptionPane.showInputDialog("Die Katze ist rund (j/n)");
                 if (eingabe.equals("j")) {
                     rund = true;
@@ -82,8 +85,8 @@ public class GUI {
                             "gültigen Wert ein", "Fehler", JOptionPane.WARNING_MESSAGE);
                 }
             }
-            eingabe = null;
-            while (eingabe.equals("j") | eingabe.equals("n")) {
+            eingabe = "0";
+            while (!eingabe.equals("j") & !eingabe.equals("n")) {
                 eingabe = JOptionPane.showInputDialog("Die Katze ist suess (j/n)");
                 if (eingabe.equals("j")) {
                     suess = true;
@@ -104,6 +107,6 @@ public class GUI {
         }
         Cat newCat = new Cat (katzenname,alter,impfdatum,gewicht,rund,suess);
         Cats.addKatze(newCat);
-        System.out.println(Cats.getCat(2).getKatzenname());
+        System.out.println(Cats.getCat(2));
     }
 }
