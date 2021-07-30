@@ -73,9 +73,8 @@ public class Cats {
         cats.add(katze);
     }
 
-    /** Die Methode checkCats überprüft Körperbau und Impfstatus der Katzen
-     * @return*/
-    public static String checkCats() {
+    /** Die Methode checkCats überprüft Körperbau und Impfstatus der Katzen*/
+    public static void checkCats() {
         for (Cat cat : cats) {
             if (cat.isRund()) {
                 System.out.print("Die Katze " + cat.getKatzenname() + " ist rund! ");
@@ -88,7 +87,6 @@ public class Cats {
             System.out.println("Die neueste Impfung der Katze geschah im " + cat.getImpfdatum());
             System.out.println("");
         }
-        return null;
     }
     /**Mit der Methode getKatzencount kann man die Anzahl der Katzenobjekte im Datensatz ausgeben*/
     public static int getKatzencount() {
