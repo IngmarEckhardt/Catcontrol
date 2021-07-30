@@ -73,8 +73,9 @@ public class Cats {
         cats.add(katze);
     }
 
-    /** Die Methode checkCats überprüft Körperbau und Impfstatus der Katzen*/
-    public static void checkCats() {
+    /** Die Methode checkCats überprüft Körperbau und Impfstatus der Katzen
+     * @return*/
+    public static String checkCats() {
         for (Cat cat : cats) {
             if (cat.isRund()) {
                 System.out.print("Die Katze " + cat.getKatzenname() + " ist rund! ");
@@ -82,11 +83,12 @@ public class Cats {
             else System.out.print("Die Katze " + cat.getKatzenname() + " ist schlank! ");
 
             System.out.println("Er wurde zuletzt im " + cat.getImpfdatum() + " geimpft.");
-            cat.setImpfdatum("September 2021");
+            //cat.setImpfdatum("September 2021");
 
             System.out.println("Die neueste Impfung der Katze geschah im " + cat.getImpfdatum());
             System.out.println("");
         }
+        return null;
     }
     /**Mit der Methode getKatzencount kann man die Anzahl der Katzenobjekte im Datensatz ausgeben*/
     public static int getKatzencount() {
@@ -101,14 +103,10 @@ public class Cats {
     public static ArrayList<Cat> getCats() {
         return cats;
     }
-
+    /** Die Methode getCat gibt ein einzelnes Katzenobjekt aus der arrayList heraus, der Parameter dient als Parameter beim Listenzugriff*/
     public static Cat getCat(int catCount) {
 
         return  Cats.cats.get(catCount);
-    }
-
-    public static Cat cats(int catCount) {
-        return Cats.cats(catCount);
     }
 
     /** Mit der Methode setCats kann die bestehende ArrayList komplett ausgetauscht werden, die neue
