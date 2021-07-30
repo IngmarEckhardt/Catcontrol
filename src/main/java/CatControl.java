@@ -6,8 +6,8 @@ public class CatControl {
         //Die Katzen werden als Objekte der Klasse Cat aus Cats.txt erschaffen und in den Katzencontainer gesteckt
         Cats.catKreation();
         //Wir lesen Werte aus dem Container aus
-        Cats.checkCats();
+        //Cats.checkCats();
         //Wir checken ob wir Objekte aus dem Container herausnehmen können
-        System.out.println(Cats.getCat(1));
+        GUI.Menue();
     }
 }
