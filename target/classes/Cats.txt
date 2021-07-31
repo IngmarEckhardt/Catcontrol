@@ -1,14 +1,14 @@
 
 Ernst
 1
-September 2020
-5.00
+Januar 2010
+5.0
 true
 true
 
 Katzilla
 1
 September 2020
-4.80
+4.8
 false
 true
