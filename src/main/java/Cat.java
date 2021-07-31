@@ -1,3 +1,6 @@
+import javax.swing.*;
+import java.util.ArrayList;
+
 public class Cat {
     private final String katzenname;
     private int alter;
@@ -23,9 +26,13 @@ public class Cat {
         ort = 0;
     }
 
-    //@Override
-    public String toString() {
-        return "Cat{" + katzenname + '}';
+    public Cat() {
+        katzenname = "Dummy";
+        alter = 99;
+        impfdatum = "2001";
+        gewicht =99;
+        rund = true;
+        suess = true;
     }
 
     public String getKatzenname() {
@@ -99,7 +106,6 @@ public class Cat {
     public void setOrt(int ort) {
         this.ort = ort;
     }
-
     public static void miauen() {
         System.out.println("Miau");
     }
@@ -109,9 +115,15 @@ public class Cat {
     }
     public static void schnurren() {
         System.out.println("Schnurr");
+        JOptionPane.showMessageDialog(null, "schnurrrr.");
     }
 
     public static void essen() {
         System.out.println("Mampf, mampf, mampf");
+    }
+
+    @Override
+    public String toString() {
+        return "Cat{" + katzenname + '}';
     }
 }
